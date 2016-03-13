@@ -1,2 +1,8 @@
 <h1>Welcome to Wildlife Tracker</h1>
-<p>Find me in app/views/species/index.html.erb</p>
+
+<h3>New Species</h3>
+<form action="/species/create" method ="post">
+  <label for='name'>Name</label>
+  <input id='name' type='text' name='name '></input>
+  <input type='submit' value='Save'></input>
+</form>

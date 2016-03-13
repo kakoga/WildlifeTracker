@@ -9,10 +9,17 @@ RSpec.describe SpeciesController, type: :controller do
     end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
       post :create
       expect(response).to have_http_status(:success)
+    end
+    it "creates a species" do
+      # protect yourself from test leakage. make sure that you are creating it this time
+      expect(Species.first).to be(nil)
+      post :create, name: 'Tiger'
+      expect(Species.first).to be_a(Species)
+      expect(Species.first.name).to eq('Tiger')
     end
   end
 

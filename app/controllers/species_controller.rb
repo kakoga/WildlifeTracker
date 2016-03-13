@@ -3,6 +3,10 @@ class SpeciesController < ApplicationController
   end
 
   def create
+    params[:name]
+    @species = Species.new()
+    @species.name = params[:name]
+    @species.save
   end
 
   def edit
