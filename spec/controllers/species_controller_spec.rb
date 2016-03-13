@@ -12,14 +12,18 @@ RSpec.describe SpeciesController, type: :controller do
   describe "POST #create" do
     it "returns http success" do
       post :create
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:redirect)
     end
     it "creates a species" do
       # protect yourself from test leakage. make sure that you are creating it this time
-      expect(Species.first).to be(nil)
-      post :create, name: 'Tiger'
+      create_a_tiger
       expect(Species.first).to be_a(Species)
       expect(Species.first.name).to eq('Tiger')
+    end
+
+    it "redirects to the index" do
+      subject = create_a_tiger
+      expect(subject).to redirect_to('/')
     end
   end
 
@@ -44,4 +48,8 @@ RSpec.describe SpeciesController, type: :controller do
     end
   end
 
+  def create_a_tiger
+    expect(Species.first).to be(nil)
+    post :create, name: 'Tiger'
+  end
 end

@@ -3,10 +3,10 @@ class SpeciesController < ApplicationController
   end
 
   def create
-    params[:name]
     @species = Species.new()
     @species.name = params[:name]
     @species.save
+    redirect_to '/'
   end
 
   def edit
