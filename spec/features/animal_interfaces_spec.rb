@@ -22,7 +22,8 @@ RSpec.feature "AnimalInterfaces", type: :feature do
     it "I can view all records" do
       visit "/"
       expect(page).to have_content("Click here to view all records")
-      click_button 'All Records'
+      expect(page).to have_content("Species Name")
+      expect(page).to have_content("Created")
     end
   end
 end

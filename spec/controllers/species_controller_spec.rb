@@ -10,7 +10,7 @@ RSpec.describe SpeciesController, type: :controller do
   end
 
   describe "POST #create" do
-    it "returns http success" do
+    it "returns http redirect" do
       post :create
       expect(response).to have_http_status(:redirect)
     end
