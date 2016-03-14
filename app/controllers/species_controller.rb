@@ -10,6 +10,7 @@ class SpeciesController < ApplicationController
   end
 
   def edit
+    # click_button 'Save Updated Record'
   end
 
   def destroy
@@ -17,4 +18,6 @@ class SpeciesController < ApplicationController
 
   def update
   end
+
+
 end

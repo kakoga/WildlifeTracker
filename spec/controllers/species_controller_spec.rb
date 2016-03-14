@@ -32,6 +32,11 @@ RSpec.describe SpeciesController, type: :controller do
       get :edit
       expect(response).to have_http_status(:success)
     end
+
+    it "updates a record in the database" do
+        subject = create_a_tiger
+        expect(subject).to redirect_to('/update')
+    end
   end
 
   describe "GET #destroy" do
@@ -41,7 +46,7 @@ RSpec.describe SpeciesController, type: :controller do
     end
   end
 
-  describe "GET #update" do
+  describe "PATCH #update" do
     it "returns http success" do
       patch :update
       expect(response).to have_http_status(:success)

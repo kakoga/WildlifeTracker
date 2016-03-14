@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   post 'species/create'
 
-  get 'species/edit'
+  get 'species/edit' => 'species#edit'
 
   delete 'species/destroy'
 
-  post 'species/update'
+  post 'species/update' => 'species#edit'
 
   root 'species#index'
 
