@@ -19,21 +19,27 @@ RSpec.feature "AnimalInterfaces", type: :feature do
     end
 
     # story 3
-    it "I can view all records" do
-      visit "/"
-      expect(page).to have_content("View all records below")
-      expect(page).to have_content("Species Name")
-      expect(page).to have_content("Created")
-    end
+    # it "I can view all records" do
+    #   visit "/"
+    #   expect(page).to have_content("View all records below")
+    #   expect(page).to have_content("Species Name")
+    #   expect(page).to have_content("Created")
+    # end
     # Story: As a ranger I can update a species in the database.
 
-    it "I can edit a species" do
-      visit "/"
-      click_button 'Edit Record'
-    end
+    # it "I can edit a species" do
+    #   visit "/"
+    #   click_on 'Edit Record'
+    #   expect(page).to have_content("Wildlife Tracker")
+    #   expect(page).to have_content("Edit the selected record below")
+    # end
 
-    it "in the database" do
-      visit "species/edit"
-    end
+    # it "in the database" do
+    #   visit "species/edit"
+
+
+
+
+    # end
   end
 end
